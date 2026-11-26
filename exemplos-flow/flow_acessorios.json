@@ -1,0 +1,638 @@
+{
+    "version": "7.3",
+    "screens": [
+        {
+            "id": "DADOS",
+            "title": "Dados do veículo",
+            "data": {
+                "cabecalho": {
+                    "type": "string",
+                    "__example__": "ABC1D23 · Micro-ônibus"
+                },
+                "detalhe": {
+                    "type": "string",
+                    "__example__": "Entrega · Contrato 123 · Cliente Exemplo"
+                }
+            },
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextSubheading",
+                        "text": "${data.cabecalho}"
+                    },
+                    {
+                        "type": "TextBody",
+                        "text": "${data.detalhe}"
+                    },
+                    {
+                        "type": "TextInput",
+                        "name": "km",
+                        "label": "Quilometragem",
+                        "input-type": "number",
+                        "required": true,
+                        "helper-text": "Valor do hodômetro, só números"
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "combustivel",
+                        "label": "Combustível",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "0",
+                                "title": "Reserva (0/8)"
+                            },
+                            {
+                                "id": "1",
+                                "title": "1/8"
+                            },
+                            {
+                                "id": "2",
+                                "title": "2/8"
+                            },
+                            {
+                                "id": "3",
+                                "title": "3/8"
+                            },
+                            {
+                                "id": "4",
+                                "title": "Meio tanque (4/8)"
+                            },
+                            {
+                                "id": "5",
+                                "title": "5/8"
+                            },
+                            {
+                                "id": "6",
+                                "title": "6/8"
+                            },
+                            {
+                                "id": "7",
+                                "title": "7/8"
+                            },
+                            {
+                                "id": "8",
+                                "title": "Cheio (8/8)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ITENS_A"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ITENS_A",
+            "title": "Itens do checklist",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "Dropdown",
+                        "name": "s_1",
+                        "label": "Antena",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            },
+                            {
+                                "id": "quebrado",
+                                "title": "Quebrado / Estragado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_2",
+                        "label": "Bancos",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "furado",
+                                "title": "Furado"
+                            },
+                            {
+                                "id": "manchado",
+                                "title": "Manchado"
+                            },
+                            {
+                                "id": "rasgado",
+                                "title": "Rasgado"
+                            },
+                            {
+                                "id": "riscado",
+                                "title": "Riscado / Arranhado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_3",
+                        "label": "Documentos",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_4",
+                        "label": "Macaco/triâng/extint",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            },
+                            {
+                                "id": "quebrado",
+                                "title": "Quebrado / Estragado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_5",
+                        "label": "Estepe",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "meia_vida",
+                                "title": "Meia vida"
+                            },
+                            {
+                                "id": "careca",
+                                "title": "Careca"
+                            },
+                            {
+                                "id": "furado",
+                                "title": "Furado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_6",
+                        "label": "Pneus",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "meia_vida",
+                                "title": "Meia vida"
+                            },
+                            {
+                                "id": "careca",
+                                "title": "Careca"
+                            },
+                            {
+                                "id": "furado",
+                                "title": "Furado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_7",
+                        "label": "Rádio AM/FM",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            },
+                            {
+                                "id": "quebrado",
+                                "title": "Quebrado / Estragado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_8",
+                        "label": "Rádio CD",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            },
+                            {
+                                "id": "quebrado",
+                                "title": "Quebrado / Estragado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_9",
+                        "label": "Rádio MP3",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            },
+                            {
+                                "id": "quebrado",
+                                "title": "Quebrado / Estragado"
+                            },
+                            {
+                                "id": "riscado",
+                                "title": "Riscado / Arranhado"
+                            },
+                            {
+                                "id": "sem_frente",
+                                "title": "Sem a frente"
+                            },
+                            {
+                                "id": "trincado",
+                                "title": "Trincado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Dropdown",
+                        "name": "s_10",
+                        "label": "Tapete",
+                        "required": true,
+                        "data-source": [
+                            {
+                                "id": "ok",
+                                "title": "OK"
+                            },
+                            {
+                                "id": "ausente",
+                                "title": "Ausente"
+                            },
+                            {
+                                "id": "rasgado",
+                                "title": "Rasgado"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "AVARIAS"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "AVARIAS",
+            "title": "Avarias",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Marque as avarias encontradas em cada área. Se não houver nenhuma, apenas continue."
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_frente",
+                        "label": "Frente",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_traseira",
+                        "label": "Traseira",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_lateral_esquerda",
+                        "label": "Lateral esquerda",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_lateral_direita",
+                        "label": "Lateral direita",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_teto",
+                        "label": "Teto",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_interior",
+                        "label": "Interior",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TextArea",
+                        "name": "obs_avarias",
+                        "label": "Detalhe das avarias",
+                        "required": false,
+                        "max-length": 600
+                    },
+                    {
+                        "type": "PhotoPicker",
+                        "name": "fotos_avaria",
+                        "label": "Fotos das avarias",
+                        "description": "Tire de perto, mostrando o dano.",
+                        "photo-source": "camera",
+                        "min-uploaded-photos": 0,
+                        "max-uploaded-photos": 4,
+                        "max-file-size-kb": 10240
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "FOTOS"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "FOTOS",
+            "title": "Fotos do veículo",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Fotografe o veículo agora: frente, traseira, lateral esquerda, lateral direita e o painel mostrando o km."
+                    },
+                    {
+                        "type": "PhotoPicker",
+                        "name": "fotos_veiculo",
+                        "label": "Fotos do veículo",
+                        "photo-source": "camera",
+                        "min-uploaded-photos": 4,
+                        "max-uploaded-photos": 6,
+                        "max-file-size-kb": 10240
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ENVIO"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ENVIO",
+            "title": "Finalizar",
+            "terminal": true,
+            "success": true,
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Confira se está tudo certo. Depois de enviar, o checklist não pode ser alterado pelo WhatsApp."
+                    },
+                    {
+                        "type": "TextArea",
+                        "name": "observacoes",
+                        "label": "Observações",
+                        "required": false,
+                        "max-length": 1000
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Enviar checklist",
+                        "on-click-action": {
+                            "name": "complete",
+                            "payload": {
+                                "s_1": "${screen.ITENS_A.form.s_1}",
+                                "s_2": "${screen.ITENS_A.form.s_2}",
+                                "s_3": "${screen.ITENS_A.form.s_3}",
+                                "s_4": "${screen.ITENS_A.form.s_4}",
+                                "s_5": "${screen.ITENS_A.form.s_5}",
+                                "s_6": "${screen.ITENS_A.form.s_6}",
+                                "s_7": "${screen.ITENS_A.form.s_7}",
+                                "s_8": "${screen.ITENS_A.form.s_8}",
+                                "s_9": "${screen.ITENS_A.form.s_9}",
+                                "s_10": "${screen.ITENS_A.form.s_10}",
+                                "km": "${screen.DADOS.form.km}",
+                                "combustivel": "${screen.DADOS.form.combustivel}",
+                                "av_frente": "${screen.AVARIAS.form.av_frente}",
+                                "av_traseira": "${screen.AVARIAS.form.av_traseira}",
+                                "av_lateral_esquerda": "${screen.AVARIAS.form.av_lateral_esquerda}",
+                                "av_lateral_direita": "${screen.AVARIAS.form.av_lateral_direita}",
+                                "av_teto": "${screen.AVARIAS.form.av_teto}",
+                                "av_interior": "${screen.AVARIAS.form.av_interior}",
+                                "obs_avarias": "${screen.AVARIAS.form.obs_avarias}",
+                                "fotos_avaria": "${screen.AVARIAS.form.fotos_avaria}",
+                                "fotos_veiculo": "${screen.FOTOS.form.fotos_veiculo}",
+                                "observacoes": "${form.observacoes}"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,815 @@
+{
+    "version": "7.3",
+    "screens": [
+        {
+            "id": "DADOS",
+            "title": "Dados do veículo",
+            "data": {
+                "cabecalho": {
+                    "type": "string",
+                    "__example__": "ABC1D23 · Micro-ônibus"
+                },
+                "detalhe": {
+                    "type": "string",
+                    "__example__": "Entrega · Contrato 123 · Cliente Exemplo"
+                }
+            },
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextSubheading",
+                        "text": "${data.cabecalho}"
+                    },
+                    {
+                        "type": "TextBody",
+                        "text": "${data.detalhe}"
+                    },
+                    {
+                        "type": "TextInput",
+                        "name": "km",
+                        "label": "Quilometragem",
+                        "input-type": "number",
+                        "required": true,
+                        "helper-text": "Valor do hodômetro, só números"
+                    },
+                    {
+                        "type": "TextInput",
+                        "name": "horimetro",
+                        "label": "Horímetro",
+                        "input-type": "number",
+                        "required": true
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ITENS_A"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ITENS_A",
+            "title": "Itens para inspecionar (1/4)",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Marque só os itens com problema. Os itens não marcados serão registrados como CONFORME."
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "nc_1",
+                        "label": "Itens NÃO conformes",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "49",
+                                "title": "1 Manutenção preventiva",
+                                "description": "A manutenção preventiva está em dia e identificada no manual do caminhão?"
+                            },
+                            {
+                                "id": "50",
+                                "title": "2 Ar condicionado",
+                                "description": "Ar condicionado"
+                            },
+                            {
+                                "id": "51",
+                                "title": "3 Bancos e assentos",
+                                "description": "Bancos e assentos"
+                            },
+                            {
+                                "id": "52",
+                                "title": "4 Bateria",
+                                "description": "Bateria"
+                            },
+                            {
+                                "id": "53",
+                                "title": "5 Braço hidráulico",
+                                "description": "Braço hidráulico, articulações da concha (buchas e pinos)"
+                            },
+                            {
+                                "id": "54",
+                                "title": "6 Buzina",
+                                "description": "Buzina"
+                            },
+                            {
+                                "id": "55",
+                                "title": "7 Extintor (carga/valid.)",
+                                "description": "Carga e validade do extintor de incêndio"
+                            },
+                            {
+                                "id": "56",
+                                "title": "8 Cinto de segurança",
+                                "description": "Cinto de segurança"
+                            },
+                            {
+                                "id": "57",
+                                "title": "9 Eixos (folgas/trincas)",
+                                "description": "Eixos (folgas e trincas)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "na_1",
+                        "label": "Itens que NÃO se aplicam",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "49",
+                                "title": "1 Manutenção preventiva"
+                            },
+                            {
+                                "id": "50",
+                                "title": "2 Ar condicionado"
+                            },
+                            {
+                                "id": "51",
+                                "title": "3 Bancos e assentos"
+                            },
+                            {
+                                "id": "52",
+                                "title": "4 Bateria"
+                            },
+                            {
+                                "id": "53",
+                                "title": "5 Braço hidráulico"
+                            },
+                            {
+                                "id": "54",
+                                "title": "6 Buzina"
+                            },
+                            {
+                                "id": "55",
+                                "title": "7 Extintor (carga/valid.)"
+                            },
+                            {
+                                "id": "56",
+                                "title": "8 Cinto de segurança"
+                            },
+                            {
+                                "id": "57",
+                                "title": "9 Eixos (folgas/trincas)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ITENS_B"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ITENS_B",
+            "title": "Itens para inspecionar (2/4)",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Marque só os itens com problema. Os itens não marcados serão registrados como CONFORME."
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "nc_2",
+                        "label": "Itens NÃO conformes",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "58",
+                                "title": "10 Pneus",
+                                "description": "Estado geral dos pneus (desgaste, calibração etc.)"
+                            },
+                            {
+                                "id": "59",
+                                "title": "11 Faixas refletivas",
+                                "description": "Faixas refletivas"
+                            },
+                            {
+                                "id": "60",
+                                "title": "12 Faróis/setas/lanternas",
+                                "description": "Faróis, setas e lanternas"
+                            },
+                            {
+                                "id": "61",
+                                "title": "13 Freio motor",
+                                "description": "Freio motor"
+                            },
+                            {
+                                "id": "62",
+                                "title": "14 Munck e limite de carga",
+                                "description": "Funcionamento do munck (lança) e identificação do limite máximo de carga"
+                            },
+                            {
+                                "id": "63",
+                                "title": "15 Pisca/ré/freio/alarme",
+                                "description": "Funcionamento do pisca alerta, luz de ré, luz de freio e alarme de ré"
+                            },
+                            {
+                                "id": "64",
+                                "title": "16 Giroflex",
+                                "description": "Giroflex"
+                            },
+                            {
+                                "id": "65",
+                                "title": "17 Painel e instrumentos",
+                                "description": "Iluminação e funcionamento de instrumentos do painel"
+                            },
+                            {
+                                "id": "66",
+                                "title": "18 Indicador filtro de ar",
+                                "description": "Indicador de restrição do filtro de ar"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "na_2",
+                        "label": "Itens que NÃO se aplicam",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "58",
+                                "title": "10 Pneus"
+                            },
+                            {
+                                "id": "59",
+                                "title": "11 Faixas refletivas"
+                            },
+                            {
+                                "id": "60",
+                                "title": "12 Faróis/setas/lanternas"
+                            },
+                            {
+                                "id": "61",
+                                "title": "13 Freio motor"
+                            },
+                            {
+                                "id": "62",
+                                "title": "14 Munck e limite de carga"
+                            },
+                            {
+                                "id": "63",
+                                "title": "15 Pisca/ré/freio/alarme"
+                            },
+                            {
+                                "id": "64",
+                                "title": "16 Giroflex"
+                            },
+                            {
+                                "id": "65",
+                                "title": "17 Painel e instrumentos"
+                            },
+                            {
+                                "id": "66",
+                                "title": "18 Indicador filtro de ar"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ITENS_C"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ITENS_C",
+            "title": "Itens para inspecionar (3/4)",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Marque só os itens com problema. Os itens não marcados serão registrados como CONFORME."
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "nc_3",
+                        "label": "Itens NÃO conformes",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "67",
+                                "title": "19 Limpadores para-brisa",
+                                "description": "Limpadores de para-brisas"
+                            },
+                            {
+                                "id": "68",
+                                "title": "20 Dispositivos de içamento",
+                                "description": "Dispositivos de içamento (cabos de aço, cintas, manilhas etc.)"
+                            },
+                            {
+                                "id": "69",
+                                "title": "21 Para-choques/chaparia",
+                                "description": "Para-choque traseiro / dianteiro e chaparias"
+                            },
+                            {
+                                "id": "70",
+                                "title": "22 Proteção partes móveis",
+                                "description": "Partes móveis possuem proteções adequadas"
+                            },
+                            {
+                                "id": "71",
+                                "title": "23 Patolamento/hidr./calços",
+                                "description": "Patolamento, sistema hidráulico e calços"
+                            },
+                            {
+                                "id": "72",
+                                "title": "24 Retrovisores",
+                                "description": "Retrovisores"
+                            },
+                            {
+                                "id": "73",
+                                "title": "25 Direção",
+                                "description": "Sistema de direção"
+                            },
+                            {
+                                "id": "74",
+                                "title": "26 Embreagem",
+                                "description": "Sistema de embreagem"
+                            },
+                            {
+                                "id": "75",
+                                "title": "27 Freios",
+                                "description": "Sistema de freio, estacionário e de serviço"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "na_3",
+                        "label": "Itens que NÃO se aplicam",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "67",
+                                "title": "19 Limpadores para-brisa"
+                            },
+                            {
+                                "id": "68",
+                                "title": "20 Dispositivos de içamento"
+                            },
+                            {
+                                "id": "69",
+                                "title": "21 Para-choques/chaparia"
+                            },
+                            {
+                                "id": "70",
+                                "title": "22 Proteção partes móveis"
+                            },
+                            {
+                                "id": "71",
+                                "title": "23 Patolamento/hidr./calços"
+                            },
+                            {
+                                "id": "72",
+                                "title": "24 Retrovisores"
+                            },
+                            {
+                                "id": "73",
+                                "title": "25 Direção"
+                            },
+                            {
+                                "id": "74",
+                                "title": "26 Embreagem"
+                            },
+                            {
+                                "id": "75",
+                                "title": "27 Freios"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ITENS_D"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ITENS_D",
+            "title": "Itens para inspecionar (4/4)",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Marque só os itens com problema. Os itens não marcados serão registrados como CONFORME."
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "nc_4",
+                        "label": "Itens NÃO conformes",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "76",
+                                "title": "28 Suspensão",
+                                "description": "Suspensão (folgas)"
+                            },
+                            {
+                                "id": "77",
+                                "title": "29 Tacógrafo",
+                                "description": "Tacógrafo"
+                            },
+                            {
+                                "id": "78",
+                                "title": "30 Telescópio",
+                                "description": "Telescópio"
+                            },
+                            {
+                                "id": "79",
+                                "title": "31 Trava gancho/roldanas",
+                                "description": "Trava de segurança do gancho do moitão e roldanas"
+                            },
+                            {
+                                "id": "80",
+                                "title": "32 Triângulo/macaco/chave",
+                                "description": "Triângulo / macaco / chave de rodas"
+                            },
+                            {
+                                "id": "81",
+                                "title": "33 Vazamentos",
+                                "description": "Vazamentos (líquidos e ar)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "na_4",
+                        "label": "Itens que NÃO se aplicam",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "76",
+                                "title": "28 Suspensão"
+                            },
+                            {
+                                "id": "77",
+                                "title": "29 Tacógrafo"
+                            },
+                            {
+                                "id": "78",
+                                "title": "30 Telescópio"
+                            },
+                            {
+                                "id": "79",
+                                "title": "31 Trava gancho/roldanas"
+                            },
+                            {
+                                "id": "80",
+                                "title": "32 Triângulo/macaco/chave"
+                            },
+                            {
+                                "id": "81",
+                                "title": "33 Vazamentos"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "AVARIAS"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "AVARIAS",
+            "title": "Avarias",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Marque as avarias encontradas em cada área. Se não houver nenhuma, apenas continue."
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_frente",
+                        "label": "Frente",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_traseira",
+                        "label": "Traseira",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_lateral_esquerda",
+                        "label": "Lateral esquerda",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_lateral_direita",
+                        "label": "Lateral direita",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_teto",
+                        "label": "Teto",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "CheckboxGroup",
+                        "name": "av_interior",
+                        "label": "Interior",
+                        "required": false,
+                        "data-source": [
+                            {
+                                "id": "A",
+                                "title": "Amassado (A)"
+                            },
+                            {
+                                "id": "P",
+                                "title": "Picotado (P)"
+                            },
+                            {
+                                "id": "Q",
+                                "title": "Quebrado / Estragado (Q)"
+                            },
+                            {
+                                "id": "R",
+                                "title": "Riscado / Arranhado (R)"
+                            },
+                            {
+                                "id": "T",
+                                "title": "Trincado (T)"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TextArea",
+                        "name": "obs_avarias",
+                        "label": "Detalhe das avarias",
+                        "required": false,
+                        "max-length": 600
+                    },
+                    {
+                        "type": "PhotoPicker",
+                        "name": "fotos_avaria",
+                        "label": "Fotos das avarias",
+                        "description": "Tire de perto, mostrando o dano.",
+                        "photo-source": "camera",
+                        "min-uploaded-photos": 0,
+                        "max-uploaded-photos": 4,
+                        "max-file-size-kb": 10240
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "FOTOS"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "FOTOS",
+            "title": "Fotos do veículo",
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Fotografe o veículo agora: frente, traseira, lateral esquerda, lateral direita e o painel mostrando o km."
+                    },
+                    {
+                        "type": "PhotoPicker",
+                        "name": "fotos_veiculo",
+                        "label": "Fotos do veículo",
+                        "photo-source": "camera",
+                        "min-uploaded-photos": 4,
+                        "max-uploaded-photos": 6,
+                        "max-file-size-kb": 10240
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Continuar",
+                        "on-click-action": {
+                            "name": "navigate",
+                            "next": {
+                                "type": "screen",
+                                "name": "ENVIO"
+                            },
+                            "payload": {}
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": "ENVIO",
+            "title": "Finalizar",
+            "terminal": true,
+            "success": true,
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "TextBody",
+                        "text": "Confira se está tudo certo. Depois de enviar, o checklist não pode ser alterado pelo WhatsApp."
+                    },
+                    {
+                        "type": "TextArea",
+                        "name": "observacoes",
+                        "label": "Observações",
+                        "required": false,
+                        "max-length": 1000
+                    },
+                    {
+                        "type": "Footer",
+                        "label": "Enviar checklist",
+                        "on-click-action": {
+                            "name": "complete",
+                            "payload": {
+                                "nc_1": "${screen.ITENS_A.form.nc_1}",
+                                "na_1": "${screen.ITENS_A.form.na_1}",
+                                "nc_2": "${screen.ITENS_B.form.nc_2}",
+                                "na_2": "${screen.ITENS_B.form.na_2}",
+                                "nc_3": "${screen.ITENS_C.form.nc_3}",
+                                "na_3": "${screen.ITENS_C.form.na_3}",
+                                "nc_4": "${screen.ITENS_D.form.nc_4}",
+                                "na_4": "${screen.ITENS_D.form.na_4}",
+                                "km": "${screen.DADOS.form.km}",
+                                "horimetro": "${screen.DADOS.form.horimetro}",
+                                "av_frente": "${screen.AVARIAS.form.av_frente}",
+                                "av_traseira": "${screen.AVARIAS.form.av_traseira}",
+                                "av_lateral_esquerda": "${screen.AVARIAS.form.av_lateral_esquerda}",
+                                "av_lateral_direita": "${screen.AVARIAS.form.av_lateral_direita}",
+                                "av_teto": "${screen.AVARIAS.form.av_teto}",
+                                "av_interior": "${screen.AVARIAS.form.av_interior}",
+                                "obs_avarias": "${screen.AVARIAS.form.obs_avarias}",
+                                "fotos_avaria": "${screen.AVARIAS.form.fotos_avaria}",
+                                "fotos_veiculo": "${screen.FOTOS.form.fotos_veiculo}",
+                                "observacoes": "${form.observacoes}"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}
